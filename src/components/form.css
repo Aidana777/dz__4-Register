@@ -7,10 +7,11 @@
 .container {
     width: 500px;
     height: 500px;
-    background-color: ghostwhite;
+    background-color: lightblue;
     margin: 0 auto;
-   
-
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 10px;
 }
 h1{
     text-align: center;
@@ -32,5 +33,6 @@ input {
 .btn{
     background-color: black;
     color: white;
+    border-radius: 15px;
     font-size: large;
 }

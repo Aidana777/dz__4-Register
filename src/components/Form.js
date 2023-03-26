@@ -23,7 +23,7 @@ const Form = () => {
     }
     return (
         <div className=' container'>
-            <h1>Register</h1>
+            <h1>Register Form</h1>
             <form className='form' onSubmit={submitHandle}>
                 <input type='text' name='username' placeholder='Username' value={username} onChange={changeHandle} />
                 <input type='text' name='surname' placeholder='Surname' value={surname} onChange={changeHandle} />
