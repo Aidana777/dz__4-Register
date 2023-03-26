@@ -9,14 +9,14 @@ const Form = () => {
     })
     const { username, surname, mobileNumber, dateOfBirth } = data;
     const changeHandle = e => {
-        setData({ ...data, [e.target.name]: [e.target.value]})
+        setData({ ...data, [e.target.name]: [e.target.value] })
     }
 
     const submitHandle = e => {
         e.preventDefault();
         if (mobileNumber.length <= 12) {
             console.log(data);
-            alert(JSON.stringify(data) );
+            alert(JSON.stringify(data));
         } else {
             console.log('Wrong number');
         }
@@ -29,7 +29,7 @@ const Form = () => {
                 <input type='text' name='surname' placeholder='Surname' value={surname} onChange={changeHandle} />
                 <input type='number' name='mobileNumber' value={mobileNumber} onChange={changeHandle} placeholder='MobileNumber' pattern='[0-9]{10}' />
                 <input type='date' name='dateOfBirth' placeholder='dateOfBirth' value={dateOfBirth} onChange={changeHandle} />
-                <input type='submit' className='btn'  name='submit' />
+                <input type='submit' className='btn' name='submit' />
             </form>
         </div>
     )
