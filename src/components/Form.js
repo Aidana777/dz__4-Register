@@ -3,20 +3,22 @@ import './form.css'
 const Form = () => {
     const [data, setData] = useState({
         username: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
+        surname: '',
+        mobileNumber: '',
+        dateOfBirth: '',
     })
-    const { username, email, password, confirmPassword } = data;
+    const { username, surname, mobileNumber, dateOfBirth } = data;
     const changeHandle = e => {
-        setData({ ...data, [e.target.name]: [e.target.value] })
+        setData({ ...data, [e.target.name]: [e.target.value]})
     }
+
     const submitHandle = e => {
         e.preventDefault();
-        if (password === confirmPassword) {
+        if (mobileNumber.length <= 12) {
             console.log(data);
+            alert(JSON.stringify(data));
         } else {
-            console.log('passwod is not matching');
+            console.log('Wrong number');
         }
     }
     return (
@@ -24,10 +26,10 @@ const Form = () => {
             <h1>Register</h1>
             <form className='form' onSubmit={submitHandle}>
                 <input type='text' name='username' placeholder='Username' value={username} onChange={changeHandle} />
-                <input type='email' name='email' placeholder='Email' value={email} onChange={changeHandle} />
-                <input type='password' name='password' value={password} onChange={changeHandle} placeholder='Password' />
-                <input type='password' name='confirmPassword' placeholder='ConfirmPassword' value={confirmPassword} onChange={changeHandle} />
-                <input type='submit' className='btn' name='submit' />
+                <input type='text' name='surname' placeholder='Surname' value={surname} onChange={changeHandle} />
+                <input type='number' name='mobileNumber' value={mobileNumber} onChange={changeHandle} placeholder='MobileNumber' pattern='[0-9]{10}' />
+                <input type='date' name='dateOfBirth' placeholder='dateOfBirth' value={dateOfBirth} onChange={changeHandle} />
+                <input type='submit' className='btn'  name='submit' />
             </form>
         </div>
     )
