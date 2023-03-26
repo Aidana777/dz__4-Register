@@ -16,7 +16,7 @@ const Form = () => {
         e.preventDefault();
         if (mobileNumber.length <= 12) {
             console.log(data);
-            alert(JSON.stringify(data));
+            alert(JSON.stringify(data) );
         } else {
             console.log('Wrong number');
         }
